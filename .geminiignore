@@ -1,0 +1,3 @@
+# Ignorar arquivos de variáveis de ambiente e segredos para o Gemini CLI
+.env
+.env.*
