@@ -40,7 +40,6 @@
 ### Privacy
 
 - **Never mention the user's employer, company name, or client/customer names** in any code, documentation, examples, owners, commit messages, or PR descriptions. Use generic placeholders like `example.com`, `condo1`, `building-a` instead. This applies to all projects.
-- **`~/.claude/` is a tracked git repository.** Any sensitive data (API keys, tokens, credentials, personal notes, client data) MUST be kept outside of tracked files. Use `.gitignore` to exclude sensitive files, store secrets in environment variables or untracked local files (e.g., `settings.local.json`, `.env.local`), and verify with `git status` before committing.
 
 ### Code Comments and Style
 
@@ -51,7 +50,7 @@
 
 ### Documentation Maintenance
 
-- **Keep `CLAUDE.md` up to date:** After any session that changes project architecture, adds/removes commands, modifies environment variables, or alters key design decisions, update the project's `CLAUDE.md` to reflect the current state.
+- **Keep `GEMINI.md` up to date:** After any session that changes project architecture, adds/removes commands, modifies environment variables, or alters key design decisions, update the project's `GEMINI.md` to reflect the current state.
 - **Keep `README.md` up to date:** After any session that changes setup steps, usage instructions, features, or dependencies, update the project's `README.md` accordingly.
 - **New projects:** If a project does not yet have a `README.md`, create one immediately after the programming work is finalized. It should cover: project description, setup/installation, usage, and environment variables at minimum.
 - **English only:** All documentation files must be written in English.
@@ -60,7 +59,8 @@
 
 - **NEVER commit directly to `main`** — always create a new feature branch before making any commits.
 - Branch naming convention: `<type>/<short-description>` (e.g., `feat/add-auth`, `fix/thread-cleanup`, `refactor/split-handlers`).
-- **Do NOT push or create PRs via CLI.** `gh` is not authenticated on this machine. After committing, only suggest a PR title and description so the user can push and open the PR manually.
+- **Always ask the user** before pushing branches or creating PRs via the CLI (e.g., using `gh`). Do not assume the environment is authenticated.
+- If the user declines or if `gh` is unavailable, suggest a PR title and description so the user can perform the action manually.
 - Do not merge the PR automatically — leave it for review.
 
 ### Commit Rules
